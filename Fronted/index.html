@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OneClick — Find Trusted Local Service Providers Near You</title>
+<meta name="description" content="OneClick connects you with verified and experienced professionals for all your home and local service needs.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+      OneClick
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="pages/login.html" class="btn-ghost"><i class="fa-regular fa-circle-user"></i> Login</a>
+      <a href="pages/register.html" class="btn btn-primary btn-sm">Register</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================== HERO ============================== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span> Smart Local Service Marketplace</span>
+      <h1 class="hero-title">Find Trusted Local Service<br>Providers <span class="accent">Near You</span></h1>
+      <p class="hero-desc">OneClick connects you with verified and experienced professionals for all your home and local service needs — booked, paid, and tracked in one place.</p>
+
+      <div class="hero-ctas">
+        <a href="pages/services.html" class="btn btn-primary">Get Started</a>
+        <a href="#how-it-works" class="btn btn-outline"><i class="fa-regular fa-circle-play"></i> How It Works</a>
+      </div>
+
+      <form class="search-panel" onsubmit="return false;">
+        <div class="search-field">
+          <label for="search-service">Service</label>
+          <input type="text" id="search-service" placeholder="e.g. Plumbing, Electrical">
+        </div>
+        <div class="search-field">
+          <label for="search-location">Your location</label>
+          <input type="text" id="search-location" placeholder="e.g. Kathmandu, Nepal">
+        </div>
+        <button type="submit" class="search-submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+
+      <ul class="trust-strip">
+        <li class="trust-item"><span class="trust-icon"><i class="fa-solid fa-shield-halved"></i></span> Verified Providers</li>
+        <li class="trust-item"><span class="trust-icon"><i class="fa-regular fa-credit-card"></i></span> Secure Payments</li>
+        <li class="trust-item"><span class="trust-icon"><i class="fa-solid fa-location-dot"></i></span> Live Tracking</li>
+        <li class="trust-item"><span class="trust-icon"><i class="fa-solid fa-star"></i></span> Ratings &amp; Reviews</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-blob"></div>
+
+      <span class="float-badge badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+      <span class="float-badge badge-rating"><i class="fa-solid fa-star"></i> 4.8 Rating</span>
+      <span class="float-badge badge-tracking"><i class="fa-solid fa-location-crosshairs"></i> 2.1 km away</span>
+
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span class="avatar-circle">RP</span>
+          <div>
+            <h4>Ramesh Plumbing</h4>
+            <span>Plumbing Service · Lalitpur</span>
+          </div>
+        </div>
+        <div class="hero-card-row">
+          <span>Arriving in</span>
+          <strong>18 min · 2.1 km</strong>
+        </div>
+        <div class="hero-card-row">
+          <span>Status</span>
+          <strong>On the way</strong>
+        </div>
+        <div class="hero-card-price">
+          <span class="trust-item" style="font-size:.7rem;">Starting from</span>
+          <span class="amount">Rs. 500</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= POPULAR CATEGORIES ========================= -->
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> Popular Categories</span>
+      <h2>Everything your home needs, in one place</h2>
+      <p>Browse verified professionals across every service category and book in minutes.</p>
+    </div>
+
+    <div class="category-grid">
+      <a href="pages/services.html?category=plumbing" class="category-card">
+        <span class="category-icon icon-blue"><i class="fa-solid fa-faucet-drip"></i></span>
+        <h3>Plumbing</h3>
+        <span>320+ providers</span>
+      </a>
+      <a href="pages/services.html?category=electrical" class="category-card">
+        <span class="category-icon icon-amber"><i class="fa-solid fa-bolt"></i></span>
+        <h3>Electrical</h3>
+        <span>280+ providers</span>
+      </a>
+      <a href="pages/services.html?category=cleaning" class="category-card">
+        <span class="category-icon icon-teal"><i class="fa-solid fa-broom"></i></span>
+        <h3>Cleaning</h3>
+        <span>410+ providers</span>
+      </a>
+      <a href="pages/services.html?category=painting" class="category-card">
+        <span class="category-icon icon-violet"><i class="fa-solid fa-paint-roller"></i></span>
+        <h3>Painting</h3>
+        <span>150+ providers</span>
+      </a>
+      <a href="pages/services.html?category=carpentry" class="category-card">
+        <span class="category-icon icon-rose"><i class="fa-solid fa-hammer"></i></span>
+        <h3>Carpentry</h3>
+        <span>190+ providers</span>
+      </a>
+      <a href="pages/services.html?category=appliance-repair" class="category-card">
+        <span class="category-icon icon-lime"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+        <h3>Appliance Repair</h3>
+        <span>230+ providers</span>
+      </a>
+      <a href="pages/services.html?category=pest-control" class="category-card">
+        <span class="category-icon icon-orange"><i class="fa-solid fa-bug-slash"></i></span>
+        <h3>Pest Control</h3>
+        <span>90+ providers</span>
+      </a>
+      <a href="pages/services.html" class="category-card">
+        <span class="category-icon icon-slate"><i class="fa-solid fa-ellipsis"></i></span>
+        <h3>More Services</h3>
+        <span>View all</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW IT WORKS ============================ -->
+<section class="section-alt" id="how-it-works">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> How It Works</span>
+      <h2>Booked in four simple steps</h2>
+      <p>From search to service, OneClick keeps every step transparent and in your control.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <h3>Search a service</h3>
+        <p>Tell us what you need and where — we'll match you with nearby verified providers.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <h3>Compare &amp; choose</h3>
+        <p>Check ratings, reviews, and pricing side by side to pick the right professional.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <h3>Book &amp; pay securely</h3>
+        <p>Pick a time slot and pay with Khalti, eSewa, or cash after the service is done.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">04</div>
+        <h3>Track &amp; review</h3>
+        <p>Follow your provider live on the map, then rate your experience when it's done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================== WHY US =============================== -->
+<section id="about">
+  <div class="container features">
+    <div class="feature-visual">
+      <div class="feature-stats">
+        <div class="stat-box"><div class="num">2,145+</div><div class="label">Happy customers</div></div>
+        <div class="stat-box"><div class="num">632+</div><div class="label">Verified providers</div></div>
+        <div class="stat-box"><div class="num">1,842+</div><div class="label">Bookings completed</div></div>
+        <div class="stat-box"><div class="num">4.8 / 5</div><div class="label">Average rating</div></div>
+      </div>
+    </div>
+
+    <div class="feature-list">
+      <span class="eyebrow"><span class="dot"></span> Why OneClick</span>
+      <div class="feature-item">
+        <span class="icon"><i class="fa-solid fa-user-check"></i></span>
+        <div>
+          <h3>Verified professionals only</h3>
+          <p>Every provider is background-checked and identity-verified before joining OneClick.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="icon"><i class="fa-solid fa-lock"></i></span>
+        <div>
+          <h3>Secure, flexible payments</h3>
+          <p>Pay upfront with Khalti or eSewa, or settle in cash once the job is complete.</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <span class="icon"><i class="fa-solid fa-map-location-dot"></i></span>
+        <div>
+          <h3>Real-time tracking</h3>
+          <p>See exactly when your provider will arrive with live location updates.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTIMONIALS ============================ -->
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow"><span class="dot"></span> Testimonials</span>
+      <h2>Trusted by customers across Nepal</h2>
+      <p>Real feedback from people who've booked services through OneClick.</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Booked an electrician in under five minutes and he arrived right on schedule. The live tracking made all the difference."</p>
+        <div class="testimonial-author">
+          <span class="avatar-circle">SK</span>
+          <div><h4>Sujata K.</h4><span>Kathmandu</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Transparent pricing and verified providers gave me real peace of mind for a plumbing repair at home."</p>
+        <div class="testimonial-author">
+          <span class="avatar-circle">BY</span>
+          <div><h4>Binod Y.</h4><span>Lalitpur</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"As a provider, OneClick's dashboard makes managing bookings and earnings incredibly simple."</p>
+        <div class="testimonial-author">
+          <span class="avatar-circle">RP</span>
+          <div><h4>Ramesh P.</h4><span>Service Provider</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROVIDER CTA ============================ -->
+<section>
+  <div class="container">
+    <div class="provider-cta">
+      <div>
+        <h2>Are you a service professional?</h2>
+        <p>Join OneClick as a verified provider — get discovered by customers near you and grow your business.</p>
+      </div>
+      <a href="pages/register.html?role=provider" class="btn btn-primary">Register as Provider</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><span class="logo-mark"><i class="fa-solid fa-bolt"></i></span> OneClick</a>
+        <p>A smart local service marketplace connecting customers with trusted, verified professionals near you.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="pages/services.html?category=plumbing">Plumbing</a></li>
+          <li><a href="pages/services.html?category=electrical">Electrical</a></li>
+          <li><a href="pages/services.html?category=cleaning">Cleaning</a></li>
+          <li><a href="pages/services.html">All Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>For Providers</h4>
+        <ul>
+          <li><a href="pages/register.html?role=provider">Join as a Provider</a></li>
+          <li><a href="pages/login.html">Provider Login</a></li>
+          <li><a href="#">Provider Resources</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 OneClick. All rights reserved.</span>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
