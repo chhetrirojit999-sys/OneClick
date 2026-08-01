@@ -1,57 +1,30 @@
-// OneClick — main.js
-// Landing page interactivity: mobile nav toggle, search form, header shadow on scroll.
+// ===== OneClick — main.js =====
+// Shared behavior used across the site (landing + auth pages)
 
-document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.querySelector('.nav-toggle');
-  const mainNav = document.querySelector('.main-nav');
+document.addEventListener("DOMContentLoaded", function () {
+  // Mobile nav toggle (landing page header)
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("mainNav");
 
-  if (navToggle && mainNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('nav-open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-  }
-
-  // Smooth-scroll for in-page anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      const targetId = link.getAttribute('href');
-      if (targetId.length > 1) {
-        const target = document.querySelector(targetId);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          mainNav?.classList.remove('nav-open');
-        }
-      }
-    });
-  });
-
-  // Search form — placeholder submit handler until backend is wired up
-  const searchForm = document.querySelector('.search-panel');
-  const searchSubmit = document.querySelector('.search-submit');
-
-  if (searchSubmit && searchForm) {
-    searchSubmit.addEventListener('click', () => {
-      const serviceInput = document.querySelector('#search-service');
-      const locationInput = document.querySelector('#search-location');
-      const service = serviceInput ? serviceInput.value.trim() : '';
-      const location = locationInput ? locationInput.value.trim() : '';
-
-      if (!service) {
-        serviceInput?.focus();
-        return;
-      }
-      // TODO: wire up to /pages/services.html once backend search endpoint exists
-      window.location.href = `pages/services.html?service=${encodeURIComponent(service)}&location=${encodeURIComponent(location)}`;
-    });
-  }
-
-  // Header shadow on scroll
-  const header = document.querySelector('.site-header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      header.style.boxShadow = window.scrollY > 8 ? '0 4px 16px rgba(15,23,42,0.06)' : 'none';
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
   }
 });
+
+// Toggle password visibility (used on login.html and register.html)
+function togglePassword(inputId, iconEl) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  const icon = iconEl.querySelector("i");
+
+  if (input.type === "password") {
+    input.type = "text";
+    if (icon) { icon.classList.remove("fa-eye"); icon.classList.add("fa-eye-slash"); }
+  } else {
+    input.type = "password";
+    if (icon) { icon.classList.remove("fa-eye-slash"); icon.classList.add("fa-eye"); }
+  }
+}
