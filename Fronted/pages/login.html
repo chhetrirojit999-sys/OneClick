@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — OneClick</title>
+<meta name="description" content="Login to your OneClick account to book or manage local services.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Same tokens + main styles as the landing page -->
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+<!-- Auth-only additions (role tabs, form fields, etc.) -->
+<link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+<body>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header">
+  <div class="container auth-header">
+    <a href="../index.html" class="logo">
+      <span class="logo-mark"><i class="fa-solid fa-bolt"></i></span>
+      OneClick
+    </a>
+    <a href="../index.html" class="back-home-link"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+  </div>
+</header>
+
+<!-- ============================== LOGIN ============================== -->
+<section class="auth-section">
+  <div class="container">
+
+    <div class="auth-illustration">
+      <div class="illustration-badge"><i class="fa-solid fa-lock"></i></div>
+      <h2>Welcome Back!</h2>
+      <p>Login to continue to your account and manage your services.</p>
+    </div>
+
+    <div class="auth-card">
+      <h1>Login to Your Account</h1>
+
+      <!-- Role tabs decide which dashboard the user lands on -->
+      <div class="role-tabs">
+        <button type="button" class="role-tab active" data-role="customer" onclick="selectLoginRole('customer', this)">Customer</button>
+        <button type="button" class="role-tab" data-role="provider" onclick="selectLoginRole('provider', this)">Provider</button>
+        <button type="button" class="role-tab" data-role="admin" onclick="selectLoginRole('admin', this)">Admin</button>
+      </div>
+      <input type="hidden" id="loginRole" value="customer">
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-field">
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <span class="toggle-eye" onclick="togglePassword('password', this)"><i class="fa-regular fa-eye"></i></span>
+          </div>
+        </div>
+
+        <p class="error-msg" id="errorMsg">Please enter a valid email and password.</p>
+
+        <div class="form-row">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+
+      <div class="divider">or</div>
+      <button class="btn btn-outline btn-block"><i class="fa-brands fa-google"></i> Continue with Google</button>
+
+      <p class="foot-note" id="registerFootNote">Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+
+  </div>
+</section>
+
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/login.js"></script>
+</body>
+</html>

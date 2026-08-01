@@ -1,0 +1,290 @@
+/* ==========================================================================
+   OneClick — Auth Pages Styles (login.html / register.html)
+   Reuses the same design tokens as style.css (variables.css).
+   Does NOT modify style.css — safe to include only on auth pages.
+   ========================================================================== */
+
+/* ---------- Simplified header for auth pages ---------- */
+.auth-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  border-bottom: 1px solid var(--color-slate-100);
+}
+
+.back-home-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-slate-500);
+  transition: color var(--transition-fast);
+}
+
+.back-home-link:hover { color: var(--color-primary); }
+
+/* ---------- Auth section layout ---------- */
+.auth-section {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+}
+
+.auth-section .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-9);
+  align-items: center;
+}
+
+/* ---------- Illustration side ---------- */
+.auth-illustration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.auth-illustration .illustration-badge {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--color-primary-light), var(--color-white));
+  border: 1px solid var(--color-slate-100);
+  display: grid;
+  place-items: center;
+  font-size: 3.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+}
+
+.auth-illustration h2 {
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.auth-illustration p {
+  font-size: var(--fs-sm);
+  color: var(--color-slate-500);
+  max-width: 34ch;
+}
+
+/* ---------- Auth card ---------- */
+.auth-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-slate-100);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-8);
+  max-width: 460px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.auth-card h1 {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--space-6);
+}
+
+/* ---------- Form fields ---------- */
+.form-group { margin-bottom: var(--space-5); }
+
+.form-group label {
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-slate-600);
+  margin-bottom: var(--space-2);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem var(--space-4);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  font-family: inherit;
+  color: var(--color-ink);
+  outline: none;
+  background: var(--color-white);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.form-group input::placeholder { color: var(--color-slate-400); }
+
+.password-field { position: relative; }
+
+.password-field .toggle-eye {
+  position: absolute;
+  right: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--color-slate-400);
+  font-size: 0.95rem;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+  color: var(--color-slate-500);
+  margin-bottom: var(--space-6);
+}
+
+.form-row label { display: flex; align-items: center; gap: var(--space-2); }
+.form-row a { color: var(--color-primary); font-weight: 600; }
+
+.terms-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--fs-xs);
+  color: var(--color-slate-500);
+  margin-bottom: var(--space-6);
+}
+
+.terms-row a { color: var(--color-primary); font-weight: 600; }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-slate-400);
+  font-size: var(--fs-xs);
+  margin-block: var(--space-6);
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-slate-200);
+}
+
+.foot-note {
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--color-slate-500);
+  margin-top: var(--space-6);
+}
+
+.foot-note a { color: var(--color-primary); font-weight: 600; }
+
+.error-msg {
+  color: #dc2626;
+  font-size: var(--fs-xs);
+  margin-top: calc(-1 * var(--space-3));
+  margin-bottom: var(--space-4);
+  display: none;
+}
+
+/* ---------- Role tabs (login page: Customer / Provider / Admin) ---------- */
+.role-tabs {
+  display: flex;
+  gap: var(--space-1);
+  background: var(--bg-section-alt);
+  border: 1px solid var(--color-slate-100);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  margin-bottom: var(--space-6);
+}
+
+.role-tab {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem var(--space-2);
+  border-radius: 8px;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-slate-500);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.role-tab.active {
+  background: var(--color-white);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Role selector cards (register page: Customer vs Provider) ---------- */
+.role-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.role-card {
+  border: 1.5px solid var(--color-slate-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-3);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+  background: var(--color-white);
+}
+
+.role-card:hover { transform: translateY(-2px); }
+
+.role-card .role-icon {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.role-card .role-title {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.role-card .role-desc {
+  font-size: var(--fs-xs);
+  color: var(--color-slate-400);
+  margin-top: var(--space-1);
+}
+
+.role-card.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.role-card.active .role-title { color: var(--color-primary-dark); }
+
+/* Provider-only fields, revealed when "Provider" role is selected */
+.provider-fields {
+  display: none;
+  border-top: 1px dashed var(--color-slate-200);
+  padding-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+.provider-fields.show { display: block; }
+
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-4);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .auth-section .container { grid-template-columns: 1fr; }
+  .auth-illustration { display: none; }
+}
