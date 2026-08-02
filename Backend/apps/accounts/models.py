@@ -1,13 +1,14 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from .manager import UserManager
 
 
-class User(AbstractUser):
+class User(AbstractUser):   
 
     ROLE_CHOICES = (
-        ('CUSTOMER', 'Customer'),
-        ('PROVIDER', 'Provider'),
-        ('ADMIN', 'Admin'),
+        ("CUSTOMER", "Customer"),
+        ("PROVIDER", "Provider"),
+        ("ADMIN", "Admin"),
     )
 
     username = None
@@ -17,17 +18,12 @@ class User(AbstractUser):
     role = models.CharField(
         max_length=20,
         choices=ROLE_CHOICES,
-        default='CUSTOMER'
+        default="CUSTOMER",
     )
 
-    phone = models.CharField(
-    max_length=15,
-    unique=True,
-    blank=True,
-    null=True
-)
-
     is_verified = models.BooleanField(default=False)
+
+    objects = UserManager()
 
     USERNAME_FIELD = "email"
 
